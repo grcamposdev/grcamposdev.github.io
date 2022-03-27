@@ -1,0 +1,31 @@
+<div class="container">
+<div class="presentation">
+  <h1 class="title">passguui generator<span><br>by Guilherme Campos</span></h1>
+  <p class="about">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  </p>
+  <p class="version">v3.0.0.1</p>
+</div>
+
+  <div class="content">
+    <img src="assets/img/logo.png" alt="" class="logo">
+
+    <form method="post" (ngSubmit)="gerar()" [formGroup]="formulario">      
+      <mat-form-field class='form'>
+        <input id="input1" matInput type="text" formControlName="input1" name="input1" placeholder="text1">   
+      </mat-form-field >
+      <mat-form-field class='form'>
+        <input id="input2" matInput type="text" formControlName="input2" name="input2" placeholder="text2">    
+      </mat-form-field >
+
+      <button mat-flat-button color="primary" id='buttons' type="submit" [disabled]="formulario.invalid" >GENERATE</button>
+    </form>
+
+    <div class="result" *ngIf="canShow">
+      <p>{{ password }}</p>      
+      <button mat-icon-button aria-label="copy text" [cdkCopyToClipboard]="copyClipText" [cdkCopyToClipboardAttempts]="7">
+        <mat-icon>assignment</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
